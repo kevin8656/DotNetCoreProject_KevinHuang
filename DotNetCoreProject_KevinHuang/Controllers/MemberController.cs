@@ -13,32 +13,32 @@ namespace DotNetCoreProject_KevinHuang.Controllers
     [ApiController]
     public class MemberController : ControllerBase
     {
-        private MemberService _memberservice = new MemberService();
+        private MemberService _memberService = new MemberService();
         [HttpGet]
         public List<Member> Get()
         {
 
-            return _memberservice.GetMembers(); ;
+            return _memberService.GetMembers(); ;
         }
         [HttpGet("{Id}")]
         public Member GetMemberById(int Id)
         {
-            return null;
+            return _memberService.GetMemberById(Id);
         }
         [HttpPost]
         public string AddMember([FromBody]Member member)
         {
-            return "";
+            return _memberService.AddMember(member); ;
         }
         [HttpPut("{Id}")]
         public string UpdateMember(int id, [FromBody]Member member)
         {
-            return "";
+            return _memberService.UpdateMember(id, member); ;
         }
         [HttpDelete("{Id}")]
         public string DeleteMember(int Id)
         {
-            return "";
+            return _memberService.DeleteMember(Id);
         }
     }
 }
