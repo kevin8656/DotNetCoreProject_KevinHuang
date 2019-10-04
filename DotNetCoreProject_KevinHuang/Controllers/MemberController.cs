@@ -17,8 +17,28 @@ namespace DotNetCoreProject_KevinHuang.Controllers
         [HttpGet]
         public List<Member> Get()
         {
-            
+
             return _memberservice.GetMembers(); ;
+        }
+        [HttpGet("{Id}")]
+        public Member GetMemberById(int Id)
+        {
+            return null;
+        }
+        [HttpPost]
+        public string AddMember([FromBody]Member member)
+        {
+            return "";
+        }
+        [HttpPut("{Id}")]
+        public string UpdateMember(int id, [FromBody]Member member)
+        {
+            return "";
+        }
+        [HttpDelete("{Id}")]
+        public string DeleteMember(int Id)
+        {
+            return "";
         }
     }
 }
