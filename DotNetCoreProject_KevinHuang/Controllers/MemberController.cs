@@ -13,17 +13,16 @@ namespace DotNetCoreProject_KevinHuang.Controllers
     [ApiController]
     public class MemberController : ControllerBase
     {
-        private MemberService _memberService = new MemberService();
+        private readonly MemberService _memberService = new MemberService();
         [HttpGet]
         public List<Member> Get()
         {
-
             return _memberService.GetMembers(); ;
         }
         [HttpGet("{Id}")]
-        public Member GetMemberById(int Id)
+        public Member GetMemberById(int id)
         {
-            return _memberService.GetMemberById(Id);
+            return _memberService.GetMemberById(id);
         }
         [HttpPost]
         public string AddMember([FromBody]Member member)
@@ -36,9 +35,9 @@ namespace DotNetCoreProject_KevinHuang.Controllers
             return _memberService.UpdateMember(id, member); ;
         }
         [HttpDelete("{Id}")]
-        public string DeleteMember(int Id)
+        public string DeleteMember(int id)
         {
-            return _memberService.DeleteMember(Id);
+            return _memberService.DeleteMember(id);
         }
     }
 }

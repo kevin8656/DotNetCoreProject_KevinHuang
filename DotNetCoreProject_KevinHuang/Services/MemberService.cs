@@ -8,15 +8,22 @@ namespace DotNetCoreProject_KevinHuang.Services
 {
     public class MemberService
     {
-        private dotnetcoreContext _context = new dotnetcoreContext();
+        private readonly dotnetcoreContext _context = new dotnetcoreContext();
         public List<Member> GetMembers()
         {
             return _context.Member.ToList();
         }
 
-        public Member GetMemberById(int Id)
+        public Member GetMemberById(int id)
         {
-            return _context.Member.Single(b => b.Id == Id);
+            try
+            {
+                return _context.Member.Single(b => b.Id == id);
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         public string AddMember(Member member)
@@ -28,44 +35,41 @@ namespace DotNetCoreProject_KevinHuang.Services
             }
             catch
             {
-                return "False";
+                return "Add Member Fail.";
             }
-            return "Success";
+            return "Add Member Success.";
         }
 
         public string UpdateMember(int id, Member member)
         {
             try
             {
-                var oldMember = _context.Member.Where(x => x.Id == id).FirstOrDefault();
-                oldMember.Account = member.Account;
-                oldMember.Password = member.Password;
-                oldMember.Name = member.Name != "" ? member.Name : oldMember.Name;
-                oldMember.Phone = member.Phone != "" ? member.Phone : oldMember.Phone;
-
+                var oldMember = _context.Member.FirstOrDefault(x => x.Id == id);
+                if (oldMember != null)
+                {
+                    oldMember.Account = member.Account;
+                    oldMember.Password = member.Password;
+                    oldMember.Name = member.Name != "" ? member.Name : oldMember.Name;
+                    oldMember.Phone = member.Phone != "" ? member.Phone : oldMember.Phone;
+                }
                 _context.SaveChanges();
             }
             catch
             {
-                return "False";
+                return "Update Member Fail.";
             }
-            return "Success";
+            return "Update Member Success.";
 
         }
 
         public string DeleteMember(int id)
         {
-            try
-            {
-                var member = _context.Member.Where(x => x.Id == id).FirstOrDefault();
-                _context.Member.Remove(member);
-                _context.SaveChanges();
-            }
-            catch(Exception e)
-            {
-                throw e;
-            }
-            return "Success";
+            var member = _context.Member.FirstOrDefault(x => x.Id == id);
+            if (member == null) return "Success";
+            _context.Member.Remove(member);
+            _context.SaveChanges();
+
+            return "Delete Member Success.";
         }
     }
 }
