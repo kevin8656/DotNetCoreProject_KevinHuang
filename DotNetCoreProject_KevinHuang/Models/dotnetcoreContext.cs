@@ -16,6 +16,7 @@ namespace DotNetCoreProject_KevinHuang.Models
         }
 
         public virtual DbSet<Member> Member { get; set; }
+        public virtual DbSet<Todo> Todo { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -46,6 +47,15 @@ namespace DotNetCoreProject_KevinHuang.Models
                     .HasMaxLength(10)
                     .IsUnicode(false)
                     .IsFixedLength();
+            });
+
+            modelBuilder.Entity<Todo>(entity =>
+            {
+                entity.Property(e => e.Content).HasMaxLength(500);
+
+                entity.Property(e => e.Title)
+                    .IsRequired()
+                    .HasMaxLength(50);
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -20,7 +20,7 @@ namespace DotNetCoreProject_KevinHuang.Services
             {
                 return _context.Member.Single(b => b.Id == id);
             }
-            catch
+            catch (Exception e)
             {
                 return null;
             }
@@ -33,7 +33,7 @@ namespace DotNetCoreProject_KevinHuang.Services
                 _context.Member.Add(member);
                 _context.SaveChanges();
             }
-            catch
+            catch (Exception e)
             {
                 return "Add Member Fail.";
             }
@@ -54,7 +54,7 @@ namespace DotNetCoreProject_KevinHuang.Services
                 }
                 _context.SaveChanges();
             }
-            catch
+            catch (Exception e)
             {
                 return "Update Member Fail.";
             }
@@ -65,7 +65,7 @@ namespace DotNetCoreProject_KevinHuang.Services
         public string DeleteMember(int id)
         {
             var member = _context.Member.FirstOrDefault(x => x.Id == id);
-            if (member == null) return "Success";
+            if (member == null) return "Delete Member Success.";
             _context.Member.Remove(member);
             _context.SaveChanges();
 
