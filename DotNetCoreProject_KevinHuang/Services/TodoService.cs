@@ -8,12 +8,15 @@ namespace DotNetCoreProject_KevinHuang.Services
 {
     public class TodoService
     {
-        private readonly dotnetcoreContext _context = new dotnetcoreContext();
+        private readonly dotnetcoreContext _context = new dotnetcoreContext();//引入EF Core套件自動產生的資料庫設定檔案
+        #region 取得所有Todo資料
         public List<Todo> GetTodos()
         {
             return _context.Todo.ToList();
         }
+        #endregion
 
+        #region 新增Todo資料
         public string AddTodo(Todo todo)
         {
             try
@@ -27,7 +30,9 @@ namespace DotNetCoreProject_KevinHuang.Services
             }
             return "Add Todo Success.";
         }
+        #endregion
 
+        #region 更新Todo資料
         public string UpdateTodo(int id)
         {
             try
@@ -45,7 +50,9 @@ namespace DotNetCoreProject_KevinHuang.Services
             }
             return "Update Todo Success.";
         }
+        #endregion
 
+        #region 刪除Todo資料 
         public string DeleteTodo(int id)
         {
             var todo = _context.Todo.FirstOrDefault(x => x.Id == id);
@@ -55,5 +62,6 @@ namespace DotNetCoreProject_KevinHuang.Services
 
             return "Delete Todo Success.";
         }
+        #endregion
     }
 }

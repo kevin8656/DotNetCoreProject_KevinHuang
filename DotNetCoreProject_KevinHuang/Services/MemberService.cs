@@ -8,11 +8,15 @@ namespace DotNetCoreProject_KevinHuang.Services
 {
     public class MemberService
     {
-        private readonly dotnetcoreContext _context = new dotnetcoreContext();
+        private readonly dotnetcoreContext _context = new dotnetcoreContext();//引入EF Core套件自動產生的Context資料庫設定檔案
+        #region 取得所有會員資料
         public List<Member> GetMembers()
         {
             return _context.Member.ToList();
         }
+        #endregion
+
+        #region 透過Id取得單一會員資料
 
         public Member GetMemberById(int id)
         {
@@ -25,7 +29,9 @@ namespace DotNetCoreProject_KevinHuang.Services
                 return null;
             }
         }
+        #endregion
 
+        #region 新增會員資料
         public string AddMember(Member member)
         {
             try
@@ -39,7 +45,9 @@ namespace DotNetCoreProject_KevinHuang.Services
             }
             return "Add Member Success.";
         }
+        #endregion
 
+        #region 更新會員資料
         public string UpdateMember(int id, Member member)
         {
             try
@@ -61,7 +69,9 @@ namespace DotNetCoreProject_KevinHuang.Services
             return "Update Member Success.";
 
         }
+        #endregion
 
+        #region 刪除會員資料
         public string DeleteMember(int id)
         {
             var member = _context.Member.FirstOrDefault(x => x.Id == id);
@@ -71,5 +81,7 @@ namespace DotNetCoreProject_KevinHuang.Services
 
             return "Delete Member Success.";
         }
+#endregion
+
     }
 }
