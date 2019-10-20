@@ -30,14 +30,10 @@ namespace DotNetCoreProject_KevinHuang.Models
         {
             modelBuilder.Entity<Member>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.Property(e => e.Account)
                     .IsRequired()
                     .HasMaxLength(30)
                     .IsUnicode(false);
-
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Name).HasMaxLength(30);
 
