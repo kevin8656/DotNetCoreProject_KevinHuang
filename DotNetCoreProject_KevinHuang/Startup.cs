@@ -42,6 +42,10 @@ namespace DotNetCoreProject_KevinHuang
 
             app.UseAuthorization();
 
+            app.UseDefaultFiles();//提供預設檔案的方法，必須放在UseStaticFiles()之前
+
+            app.UseStaticFiles();//開放可以使用靜態檔案，預設資料夾為wwwroot
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
