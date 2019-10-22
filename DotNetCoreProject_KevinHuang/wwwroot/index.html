@@ -10,48 +10,24 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<header>
-    <h1>待辦清單</h1>
-    <div class="left-div">
-        <input id="todo-title-input" type="text" placeholder="請輸入待辦事項標題">
-        <input id="todo-content-input" type="text" placeholder="請輸入待辦事項內容">
-    </div>
-    <div class="right-div">
-        <a id="add-todo-btn" class="add-btn" onclick="AddTodo()">+</a>
-    </div>
-</header>
+    <header>
+        <h1>待辦清單</h1>
+        <div class="left-div">
+            <input id="todo-title-input" type="text" placeholder="請輸入待辦事項標題">
+            <input id="todo-content-input" type="text" placeholder="請輸入待辦事項內容">
+        </div>
+        <div class="right-div">
+            <a id="add-todo-btn" class="add-btn" onclick="AddTodo()">+</a>
+        </div>
+    </header>
     <article>
         <section>
             <ul id="todolist-ul">
-                <li>
-                    <div class="todo-title">1</div>
-                    <div class="todo-content">test1</div>
-                    <span class="close">x</span>
-                </li>
-                <li>
-                    <div class="todo-title">2</div>
-                    <div class="todo-content">test2</div>
-                    <span class="close">x</span>
-                </li>
-                <li class="checked">
-                    <div class="todo-title">3</div>
-                    <div class="todo-content">test3</div>
-                    <span class="close">x</span>
-                </li>
-                <li>
-                    <div class="todo-title">4</div>
-                    <div class="todo-content">test4</div>
-                    <span class="close">x</span>
-                </li>
-                <li>
-                    <div class="todo-title">5</div>
-                    <div class="todo-content">test5</div>
-                    <span class="close">x</span>
-                </li>
             </ul>
         </section>
     </article>
     <footer></footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

@@ -51,7 +51,7 @@ namespace DotNetCoreProject_KevinHuang.Models
 
             modelBuilder.Entity<Todo>(entity =>
             {
-                entity.Property(e => e.Content).HasMaxLength(500);
+                entity.Property(e => e.Content).HasMaxLength(100);
 
                 entity.Property(e => e.Title)
                     .IsRequired()
