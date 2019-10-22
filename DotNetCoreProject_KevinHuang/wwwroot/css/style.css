@@ -1,8 +1,8 @@
 ﻿@charset "UTF-8";
-/* Include the padding and border in an element's total width and height */
 * {
     font-family: Microsoft JhengHei;
 }
+
 /* Remove margins and padding from the list */
 ul {
     margin: 0;
@@ -42,7 +42,7 @@ ul {
         ul li .todo-content {
         }
 
-        /* When clicked on, add a background color and strike out text */
+        /* When checked , add a background color and strike out text */
         ul li.checked {
             background: #888;
             color: #fff !important;
@@ -100,6 +100,7 @@ header {
         float: left;
         text-align: center;
     }
+
 /* Style the input */
 input {
     margin: 0 0 3px 0;
