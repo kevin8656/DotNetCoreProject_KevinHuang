@@ -1,4 +1,5 @@
 ﻿@charset "UTF-8";
+
 * {
     font-family: Microsoft JhengHei;
 }
@@ -9,59 +10,58 @@ ul {
     padding: 0;
 }
 
-    /* Style the list items */
-    ul li {
-        cursor: pointer;
-        position: relative;
-        padding: 12px 8px 12px 40px;
-        background: #eee;
-        font-size: 18px;
-        transition: 0.2s;
-        /* make the list items unselectable */
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
+/* Style the list items */
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
-        /* Set all odd list items to a different color (zebra-stripes) */
-        ul li:nth-child(odd) {
-            background: #f9f9f9;
-        }
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+    background: #f9f9f9;
+}
 
-        /* Darker background-color on hover */
-        ul li:hover {
-            background: #ddd;
-        }
+/* Darker background-color on hover */
+ul li:hover {
+    background: #ddd;
+}
 
-        ul li .todo-title {
-            font-size: 20px;
-            font-weight: bold;
-        }
+ul li .todo-title {
+    font-size: 20px;
+    font-weight: bold;
+}
 
-        ul li .todo-content {
-        }
+ul li .todo-content {}
 
-        /* When checked , add a background color and strike out text */
-        ul li.checked {
-            background: #888;
-            color: #fff !important;
-            text-decoration: line-through;
-        }
+/* When checked , add a background color and strike out text */
+ul li.checked {
+    background: #888;
+    color: #fff !important;
+    text-decoration: line-through;
+}
 
-            /* Add a "checked" mark when clicked on */
-            ul li.checked::before {
-                content: '';
-                position: absolute;
-                border-color: #fff;
-                border-style: solid;
-                border-width: 0 2px 2px 0;
-                top: 25px;
-                left: 16px;
-                transform: rotate(45deg);
-                height: 15px;
-                width: 7px;
-            }
+/* Add a "checked" mark when clicked on */
+ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 25px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
 
 /* Style the close button */
 .close {
@@ -72,10 +72,10 @@ ul {
     font-size: 20px;
 }
 
-    .close:hover {
-        background-color: bisque;
-        color: white;
-    }
+.close:hover {
+    background-color: bisque;
+    color: white;
+}
 
 /* Style the header */
 header {
@@ -83,23 +83,23 @@ header {
     padding: 30px 40px;
 }
 
-    /* Clear floats after the header */
-    header:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+/* Clear floats after the header */
+header:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
-    header .left-div {
-        float: left;
-        width: 90%
-    }
+header .left-div {
+    float: left;
+    width: 90%
+}
 
-    header .right-div {
-        width: 10%;
-        float: left;
-        text-align: center;
-    }
+header .right-div {
+    width: 10%;
+    float: left;
+    text-align: center;
+}
 
 /* Style the input */
 input {
@@ -134,12 +134,12 @@ input {
     line-height: 63px
 }
 
-    .add-btn:hover {
-        background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
-        background-color: #f6f6f6;
-    }
+.add-btn:hover {
+    background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+    background-color: #f6f6f6;
+}
 
-    .add-btn:active {
-        position: relative;
-        top: 1px;
-    }
+.add-btn:active {
+    position: relative;
+    top: 1px;
+}
